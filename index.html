@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>moazz</title>
+</head>
+<body>
+    <div class="moazz">
+        
+        <!-- <h1 class="ahmed">Moazz Ahmed Alsadeq</h1>   -->
+    </div>
+</body>
+<script>
+    function createRose() {
+        const rose = document.createElement('div');
+        rose.classList.add('rose');
+        rose.innerHTML =  '🌸';
+        
+        rose.style.left = Math.random() * 100 + 'vw';
+        rose.style.animationDuration = Math.random() * 3 + 2 + 's';
+        rose.style.fontSize = Math.random() * 20 + 15 + 'px';
+        
+        document.body.appendChild(rose);
+        
+        setTimeout(() => {
+            rose.remove();
+        }, 5000);
+    }
+
+    // تقليل الوقت إلى 100 يجعل المطر غزير جداً بالورود
+    setInterval(createRose, 15); 
+</script>
+</html>

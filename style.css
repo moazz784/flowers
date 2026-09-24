@@ -1,0 +1,80 @@
+/* إعادة ضبط التباعد لجميع العناصر */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ضبط خلفية الصفحة والشاشة بالكامل */
+body {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("moazz.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.moazz {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ahmed {
+    font-size: 120px; /* حجم كبير للكلمة */
+    font-weight: 800; /* سمك الخط */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+
+    /* إعداد تدرج الألوان المتموج */
+    background: linear-gradient(45deg, #ff007f, #7f00ff, #00d4ff, #00ff88, #ff007f);
+    background-size: 300% 300%;
+    
+    /* قص الخلفية لتظهر داخل النص فقط */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* تشغيل انيميشن تغيير الألوان بشكل مستمر وثابت */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* تعريف حركة تغيير الألوان */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* تنسيق عناصر الورود المتساقطة */
+.rose {
+    position: fixed;
+    top: -30px;
+    z-index: 999;
+    pointer-events: none; /* لمنع التعارض مع الضغط على عناصر الصفحة */
+    animation: fall linear forwards;
+}
+
+/* حركة السقوط مع الدوران */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}
